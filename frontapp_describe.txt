@@ -1,0 +1,38 @@
+ kubectl describe deployment frontapp
+Name:                   frontapp
+Namespace:              default
+CreationTimestamp:      Tue, 19 Dec 2023 08:46:32 +0100
+Labels:                 app=frontapp
+                        homework=frontapp
+                        training=block3
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=frontapp,homework=frontapp,training=block3
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=frontapp
+           homework=frontapp
+           training=block3
+  Containers:
+   attilaszegedihw:
+    Image:      quay.io/drsylent/cubix/block3/homework-frontapp:springboot3
+    Port:       8090/TCP
+    Host Port:  0/TCP
+    Environment:
+      APP_DEFAULT_MESSAGE:  frontapp
+      JAVA_OPTS:
+    Mounts:                 <none>
+  Volumes:                  <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   frontapp-586b6cbd57 (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  6s    deployment-controller  Scaled up replica set frontapp-586b6cbd57 to 1

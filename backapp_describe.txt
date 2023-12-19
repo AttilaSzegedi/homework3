@@ -1,0 +1,38 @@
+ kubectl describe deployment backapp
+Name:                   backapp
+Namespace:              default
+CreationTimestamp:      Tue, 19 Dec 2023 08:46:27 +0100
+Labels:                 app=backapp
+                        homework=backapp
+                        training=block3
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=backapp,homework=backapp,training=block3
+Replicas:               1 desired | 1 updated | 1 total | 0 available | 1 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=backapp
+           homework=backapp
+           training=block3
+  Containers:
+   backapp:
+    Image:      quay.io/drsylent/cubix/block3/homework-backapp:springboot3
+    Port:       8081/TCP
+    Host Port:  0/TCP
+    Environment:
+      APP_DEFAULT_MESSAGE:  backapp
+      JAVA_OPTS:            Dspring.main.banner-mode=off
+    Mounts:                 <none>
+  Volumes:                  <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      False   MinimumReplicasUnavailable
+  Progressing    True    ReplicaSetUpdated
+OldReplicaSets:  <none>
+NewReplicaSet:   backapp-77d8764bbb (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  42s   deployment-controller  Scaled up replica set backapp-77d8764bbb to 1
