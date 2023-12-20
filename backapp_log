@@ -1,0 +1,11 @@
+ kubectl logs -l app=backapp --all-containers=true
+2023-12-20T14:17:06.438Z  INFO 1 --- [           main] hu.cubix.cloud.SecondHomeworkBackapp     : Started SecondHomeworkBackapp in 5.172 seconds (process running for 6.219)
+2023-12-20T14:17:57.197Z  INFO 1 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-20T14:17:57.198Z  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-20T14:17:57.204Z  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-12-20T14:17:57.315Z  INFO 1 --- [nio-8080-exec-1] hu.cubix.cloud.api.BackappController     : Request arrived with message Hello
+2023-12-20T14:17:57.324Z  INFO 1 --- [nio-8080-exec-1] hu.cubix.cloud.api.BackappController     : Returning response: BackappResponse[time=2023-12-20T14:17:57.320441472, message=Hello, homeworkOwner=HW3/HW4 image, hostAddress=10.244.0.63, extraImageData=Cubix training]
+2023-12-20T14:18:07.905Z  INFO 1 --- [nio-8080-exec-2] hu.cubix.cloud.api.BackappController     : Request arrived with message frontapp
+2023-12-20T14:18:07.907Z  INFO 1 --- [nio-8080-exec-2] hu.cubix.cloud.api.BackappController     : Returning response: BackappResponse[time=2023-12-20T14:18:07.906613188, message=frontapp, homeworkOwner=HW3/HW4 image, hostAddress=10.244.0.63, extraImageData=Cubix training]
+2023-12-20T14:19:05.403Z  INFO 1 --- [nio-8080-exec-3] hu.cubix.cloud.api.BackappController     : Request arrived with message frontapp
+2023-12-20T14:19:05.404Z  INFO 1 --- [nio-8080-exec-3] hu.cubix.cloud.api.BackappController     : Returning response: BackappResponse[time=2023-12-20T14:19:05.404019991, message=frontapp, homeworkOwner=HW3/HW4 image, hostAddress=10.244.0.63, extraImageData=Cubix training]

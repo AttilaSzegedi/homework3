@@ -9,8 +9,6 @@ metadata:
 spec:
   selector:
       app: frontapp
-      training: block3
-      homework: frontapp
   ports:
     - protocol: TCP
       port: 8080

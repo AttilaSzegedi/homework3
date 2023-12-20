@@ -11,8 +11,6 @@ spec:
   selector:
     matchLabels:
       app: frontapp
-      training: block3
-      homework: frontapp
   template:
     metadata:
       labels:
@@ -21,12 +19,14 @@ spec:
         homework: frontapp
     spec:
       containers:
-      - name: attilaszegedihw
+      - name: afrontapp
         image: quay.io/drsylent/cubix/block3/homework-frontapp:springboot3
         ports:
-        - containerPort: 8090
+        - containerPort: 8080
         env:
         - name: APP_DEFAULT_MESSAGE
           value: "frontapp"
         - name: JAVA_OPTS
           value: ""
+        - name: BACK_URL
+          value: http://backapp:8080

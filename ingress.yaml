@@ -1,8 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: block3
+  name: hw3asz
   labels:
+    app: frontapp
     training: block3
 spec:
   rules:
@@ -11,22 +12,7 @@ spec:
       - path: /frontapp
         pathType: Exact
         backend: 
-          labels:
-            app: frontapp
-            training: block3
-            homework: frontapp
           service:
             name: frontapp
             port:
               number: 8080
-      - path: /backapp
-        pathType: Exact
-        backend: 
-          labels:
-            app: backapp
-            training: block3
-            homework: backapp
-          service:
-            name: backapp
-            port:
-              number: 8081

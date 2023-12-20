@@ -1,0 +1,19 @@
+kubectl get all -l homework=frontapp
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/frontapp-6c7cff95b6-ln9mq   1/1     Running   0          23m
+
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+service/frontapp   ClusterIP   10.96.217.29   <none>        8080/TCP   23m
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/frontapp   1/1     1            1           23m
+
+NAME                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/frontapp-6c7cff95b6   1         1         1       23m
+
+pluss need to delete ingress
+ kubectl get ingress
+NAME     CLASS    HOSTS   ADDRESS     PORTS   AGE
+hw3asz   <none>   *       localhost   80      31m
+PS C:\CUBIX\devops\kubernetes\homework3\homework3> kubectl delete ingress hw3asz
+ingress.networking.k8s.io "hw3asz" deleted

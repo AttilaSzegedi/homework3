@@ -11,22 +11,20 @@ spec:
   selector:
     matchLabels:
       app: backapp
-      training: block3
-      homework: backapp
   template:
     metadata:
       labels:
         app: backapp
-        homework: backapp
         training: block3
+        homework: backapp
     spec:
       containers:
       - name: backapp
         image: quay.io/drsylent/cubix/block3/homework-backapp:springboot3
         ports:
-          - containerPort: 8081
+        - containerPort: 8080
         env:
         - name: APP_DEFAULT_MESSAGE
           value: "backapp"
         - name: JAVA_OPTS
-          value: Dspring.main.banner-mode=off
+          value: -Dspring.main.banner-mode=off

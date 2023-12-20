@@ -1,0 +1,7 @@
+ kubectl delete all -l training=block3
+pod "backapp-5b5fbf6486-xmrp7" deleted
+pod "frontapp-6c7cff95b6-ln9mq" deleted
+service "backapp" deleted
+service "frontapp" deleted
+deployment.apps "backapp" deleted
+deployment.apps "frontapp" deleted
